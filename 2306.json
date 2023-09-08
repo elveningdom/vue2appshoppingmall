@@ -1,0 +1,625 @@
+{
+  "bannerlist": [
+    {
+      "id": "1",
+      "img": "http://bfs.biyao.com/group2/M00/4A/D0/CghkFmKms26AWUYwAABiqoxtq4o862.jpg"
+    },
+    {
+      "id": "2",
+      "img": "http://bfs.biyao.com/group2/M00/3E/DC/CghkFmKO_u2Ae6IjAACq1PIgzsY640.jpg"
+    },
+    {
+      "id": "3",
+      "img": "http://bfs.biyao.com/group2/M00/42/E9/CghkFmKWtHOAYqvbAABYUHdlfc0208.jpg"
+    },
+    {
+      "id": "4",
+      "img": "http://bfs.biyao.com/group2/M00/40/77/CghjFmKRvGCAY_-yAABX7hw7BXM779.jpg"
+    },
+    {
+      "id": "5",
+      "img": "http://bfs.biyao.com/group2/M00/47/DC/CghiFmKgYwSAAFV6AAA_nj944z8630.jpg"
+    },
+    {
+      "id": "6",
+      "img": "http://bfs.biyao.com/group2/M00/34/23/CghkFmJ8yo2AXZtuAAB_g0vFyPE028.jpg"
+    }
+  ],
+  "grid": [
+    {
+      "id": 1,
+      "img": "http://bfs.biyao.com/group1/M01/87/05/rBACVF9I-oCADPIbAAAW-6wj7Nk477.png",
+      "name": "品质男装"
+    },
+    {
+      "id": 2,
+      "img": "http://bfs.biyao.com/group2/M00/7D/E0/CghkFmMV0NGAKS9iAAAYBi-yE7E858.png",
+      "name": "食品饮料"
+    },
+    {
+      "id": 3,
+      "img": "http://bfs.biyao.com/group1/M01/87/03/rBACVF9I-RmAHwqQAAATob9apjA195.png",
+      "name": "每日签到"
+    },
+    {
+      "id": 4,
+      "img": "http://bfs.biyao.com/group1/M01/88/F0/rBACW19I-daAfvjvAAAXEsKWt18728.png",
+      "name": "每日上新"
+    },
+    {
+      "id": 5,
+      "img": "http://bfs.biyao.com/group1/M01/88/F1/rBACW19I-hCAXKHlAAAStrCj5PY962.png",
+      "name": "生鲜直供"
+    }
+  ],
+  "goodsinfo": [
+    {
+      "id": 1,
+      "priceStr": 99,
+      "num": 57,
+      "type": 1,
+      "image": "https://bfs.biyao.com/group2/M00/11/FD/CghkFmTZiyeAFSN-AAPyhu1JGi8822_360x360.jpg",
+      "labels": [
+        {
+          "color": "#AB7FD1",
+          "roundColor": "#AB7FD1",
+          "textColor": "#FFFFFF",
+          "content": "爆品"
+        },
+        {
+          "color": "#FFFFFF",
+          "roundColor": "#FB4C81",
+          "textColor": "#FB4C81",
+          "content": "一起拼"
+        }
+      ],
+      "mainTitle": "无牙自动扣皮带",
+      "thirdContent": "5.3w+条好评",
+      "subtitle": "BOGNER制造商|个性切割扣头 时尚雅黑 无牙带身"
+    },
+    {
+      "id": 2,
+      "priceStr": 139,
+      "num": 34,
+      "type": 2,
+      "image": "https://bfs.biyao.com/group2/M00/12/11/CghjFmTZg9eAQHJuAAK1bV6cRdc946_360x360.jpg",
+      "labels": [
+        {
+          "color": "#AB7FD1",
+          "roundColor": "#AB7FD1",
+          "textColor": "#FFFFFF",
+          "content": "爆品"
+        },
+        {
+          "color": "#FFFFFF",
+          "roundColor": "#FB4C81",
+          "textColor": "#FB4C81",
+          "content": "一起拼"
+        }
+      ],
+      "mainTitle": "女士香水套装",
+      "thirdContent": "3.7w+条好评",
+      "subtitle": "祖玛珑同原料制造商|淡雅柔和--清新俏皮--性感奢美"
+    },
+    {
+      "id": 3,
+      "priceStr": 99,
+      "num": 27,
+      "type": 3,
+      "image": "http://bfs.biyao.com/group2/M00/41/5B/CghjFmKUGbGAfds-AArNkxE_4tA485_360x360.jpg",
+      "labels": [
+        {
+          "color": "#AB7FD1",
+          "roundColor": "#AB7FD1",
+          "textColor": "#FFFFFF",
+          "content": "爆品"
+        },
+        {
+          "color": "#FFFFFF",
+          "roundColor": "#FB4C81",
+          "textColor": "#FB4C81",
+          "content": "一起拼"
+        }
+      ],
+      "mainTitle": "S.S.酒店风格纯棉大浴巾",
+      "thirdContent": "2.7w+条好评",
+      "subtitle": "希尔顿酒店床品制造商|五星级酒店毛巾 加厚加大全棉柔软吸水 亮丝缎档工艺"
+    },
+    {
+      "id": 4,
+      "priceStr": 219,
+      "num": 27,
+      "type": 4,
+      "image": "http://bfs.biyao.com/group2/M00/41/EA/CghkFmKUk3CACb-sAAdRykBCEf4443_360x360.jpg",
+      "labels": [
+        {
+          "color": "#AB7FD1",
+          "roundColor": "#AB7FD1",
+          "textColor": "#FFFFFF",
+          "content": "爆品"
+        },
+        {
+          "color": "#FFFFFF",
+          "roundColor": "#FB4C81",
+          "textColor": "#FB4C81",
+          "content": "一起拼"
+        }
+      ],
+      "mainTitle": "伊兰图新疆棉花被芯",
+      "thirdContent": "1.0w+条好评",
+      "subtitle": "Adairs制造商|千层棉花填充，吸湿透气，久用不起坨"
+    },
+    {
+      "id": 5,
+      "priceStr": 79,
+      "num": 28,
+      "type": 5,
+      "image": "http://bfs.biyao.com/group2/M00/11/F2/CghkFmTZfuqAeMYXAAVrgGgnEws488_360x360.jpg",
+      "labels": [
+        {
+          "color": "#AB7FD1",
+          "roundColor": "#AB7FD1",
+          "textColor": "#FFFFFF",
+          "content": "爆品"
+        },
+        {
+          "color": "#FFFFFF",
+          "roundColor": "#FB4C81",
+          "textColor": "#FB4C81",
+          "content": "一起拼"
+        }
+      ],
+      "mainTitle": "【高颅顶】蓬松洗发护发",
+      "thirdContent": "2.4w+条好评",
+      "subtitle": "卡诗同原料制造商|洁净头油，平衡水油，持久清爽头皮，拯救油腻扁塌细软发，令秀发丰盈蓬松"
+    },
+    {
+      "id": 6,
+      "priceStr": 399,
+      "num": 257,
+      "type": 4,
+      "image": "http://bfs.biyao.com/group2/M00/42/67/CghiFmKVk4uALB57AATuGoBo3Dg666_360x360.jpg",
+      "labels": [
+        {
+          "color": "#AB7FD1",
+          "roundColor": "#AB7FD1",
+          "textColor": "#FFFFFF",
+          "content": "爆品"
+        },
+        {
+          "color": "#FFFFFF",
+          "roundColor": "#FB4C81",
+          "textColor": "#FB4C81",
+          "content": "一起拼"
+        }
+      ],
+      "mainTitle": "M&N 全棉桑蚕丝四季秋夏被",
+      "thirdContent": "7164条好评",
+      "subtitle": "Lane Crawford制造商|2021蚕丝被销量TOP1 100%桑蚕丝透气舒适 买2条可做子母被使用"
+    },
+    {
+      "id": 7,
+      "priceStr": 169,
+      "num": 365,
+      "type": 7,
+      "image": "http://bfs.biyao.com/group1/M01/16/8C/rBACW1-syQOAXki_AALk90Z_wsA876_360x360.jpg",
+      "labels": [
+        {
+          "color": "#AB7FD1",
+          "roundColor": "#AB7FD1",
+          "textColor": "#FFFFFF",
+          "content": "爆品"
+        },
+        {
+          "color": "#FFFFFF",
+          "roundColor": "#FB4C81",
+          "textColor": "#FB4C81",
+          "content": "一起拼"
+        }
+      ],
+      "mainTitle": "澈.儿童光学镜-C.含镜片",
+      "thirdContent": "1286条好评",
+      "subtitle": "依视路集团旗下制造商|眼镜架采用进口TR90材质安全轻便耐用，可配墨镜、防蓝光、高清绿膜等镜片"
+    },
+    {
+      "id": 8,
+      "priceStr": 59,
+      "num": 74,
+      "type": 8,
+      "image": "http://bfs.biyao.com/group2/M00/0C/60/CghjFmTAwuiAG-UPAAYTOo1IpTU221_360x360.jpg",
+      "labels": [
+        {
+          "color": "#AB7FD1",
+          "roundColor": "#AB7FD1",
+          "textColor": "#FFFFFF",
+          "content": "爆品"
+        },
+        {
+          "color": "#FFFFFF",
+          "roundColor": "#FB4C81",
+          "textColor": "#FB4C81",
+          "content": "一起拼"
+        }
+      ],
+      "mainTitle": "蜂胶海盐乳酸菌牙膏",
+      "thirdContent": "6.0w+条好评",
+      "subtitle": "纽西小精灵同原料制造商|选用美国HUBER公司的专业软性洁齿磨料，有效去除牙齿表面的污垢"
+    },
+    {
+      "id": 9,
+      "priceStr": 199,
+      "num": 64,
+      "type": 9,
+      "image": "http://bfs.biyao.com/group1/M00/93/09/rBACVF2LHcCAfyGhAAZc_-SH_Bc759_360x360.jpg",
+      "labels": [
+        {
+          "color": "#AB7FD1",
+          "roundColor": "#AB7FD1",
+          "textColor": "#FFFFFF",
+          "content": "爆品"
+        },
+        {
+          "color": "#FFFFFF",
+          "roundColor": "#FB4C81",
+          "textColor": "#FB4C81",
+          "content": "一起拼"
+        }
+      ],
+      "mainTitle": "表品时尚风格简约腕表",
+      "thirdContent": "4341条好评",
+      "subtitle": "LEE制造商|表壳316L精钢材质、进口日本Miyota机芯+原装电池"
+    },
+    {
+      "id": 10,
+      "priceStr": 429,
+      "num": 364,
+      "type": 10,
+      "image": "http://bfs.biyao.com/group2/M00/A4/67/CghkFmNyFAqAE905AA0P2FBHe24407_360x360.jpg",
+      "labels": [
+        {
+          "color": "#AB7FD1",
+          "roundColor": "#AB7FD1",
+          "textColor": "#FFFFFF",
+          "content": "爆品"
+        },
+        {
+          "color": "#FFFFFF",
+          "roundColor": "#FB4C81",
+          "textColor": "#FB4C81",
+          "content": "一起拼"
+        }
+      ],
+      "mainTitle": "30件6人餐-喜上枝头",
+      "thirdContent": "2883条好评",
+      "subtitle": "特力屋hola制造商|红蓝经典配色 浓浓中国风 提手礼盒 可微波可洗碗机"
+    },
+    {
+      "id": 11,
+      "priceStr": 94,
+      "num": 76,
+      "type": 11,
+      "image": "http://bfs.biyao.com/group2/M00/7A/13/CghiFmMNXNeAf_NKAAsVBrBlWj4815_360x360.jpg",
+      "labels": [
+        {
+          "color": "#AB7FD1",
+          "roundColor": "#AB7FD1",
+          "textColor": "#FFFFFF",
+          "content": "爆品"
+        },
+        {
+          "color": "#FFFFFF",
+          "roundColor": "#FB4C81",
+          "textColor": "#FB4C81",
+          "content": "一起拼"
+        }
+      ],
+      "mainTitle": "造极阿胶糕红枣枸杞型",
+      "thirdContent": "2.0w+条好评",
+      "subtitle": "中膏滋补品制造商|“非遗”驴皮阿胶糕 礼盒装免费送手提袋"
+    },
+    {
+      "id": 12,
+      "priceStr": 65,
+      "num": 267,
+      "type": 12,
+      "image": "http://bfs.biyao.com/group2/M00/C4/80/CghkFmPUg16AIOvBAALD4rdNV4A218_360x360.jpg",
+      "labels": [
+        {
+          "color": "#AB7FD1",
+          "roundColor": "#AB7FD1",
+          "textColor": "#FFFFFF",
+          "content": "爆品"
+        },
+        {
+          "color": "#FFFFFF",
+          "roundColor": "#FB4C81",
+          "textColor": "#FB4C81",
+          "content": "一起拼"
+        }
+      ],
+      "mainTitle": "Origin系列星级酒店香薰",
+      "thirdContent": "3913条好评",
+      "subtitle": "BBA4S制造商|星级酒店高定香氛,160g大容量,孕婴安全,净味留香"
+    },
+    {
+      "id": 13,
+      "priceStr": 78,
+      "num": 653,
+      "type": 13,
+      "image": "http://bfs.biyao.com/group1/M01/A9/73/rBACYWBFaxaAK54zAANLPMETo78248_360x360.jpg",
+      "labels": [
+        {
+          "color": "#AB7FD1",
+          "roundColor": "#AB7FD1",
+          "textColor": "#FFFFFF",
+          "content": "爆品"
+        },
+        {
+          "color": "#FFFFFF",
+          "roundColor": "#FB4C81",
+          "textColor": "#FB4C81",
+          "content": "一起拼"
+        }
+      ],
+      "mainTitle": "男士清爽保湿水",
+      "thirdContent": "5134条好评",
+      "subtitle": "碧欧泉同原料制造商|蕴含多种护肤保湿控油精华，质地清爽，缓解干燥油腻，令皮肤舒爽宜人"
+    },
+    {
+      "id": 14,
+      "priceStr": 669,
+      "num": 546,
+      "type": 14,
+      "image": "http://bfs.biyao.com/group1/M01/7C/AF/rBACYV8-Q8aAI4QSAAb0UQhfDGw840_360x360.jpg",
+      "labels": [
+        {
+          "color": "#AB7FD1",
+          "roundColor": "#AB7FD1",
+          "textColor": "#FFFFFF",
+          "content": "爆品"
+        },
+        {
+          "color": "#FFFFFF",
+          "roundColor": "#FB4C81",
+          "textColor": "#FB4C81",
+          "content": "一起拼"
+        }
+      ],
+      "mainTitle": "智能加热破壁料理机多功能",
+      "thirdContent": "1.2w+条好评",
+      "subtitle": "康宁制造商|一键灵动操控 八大功能 大功率纯铜电机 3D立体加热不糊底 高硼硅玻璃杯"
+    },
+    {
+      "id": 15,
+      "priceStr": 46,
+      "num": 653,
+      "type": 15,
+      "image": "http://bfs.biyao.com/group2/M00/12/14/CghiFmTZhhCAG9naAAggoivt23w065_360x360.jpg",
+      "labels": [
+        {
+          "color": "#AB7FD1",
+          "roundColor": "#AB7FD1",
+          "textColor": "#FFFFFF",
+          "content": "爆品"
+        },
+        {
+          "color": "#FFFFFF",
+          "roundColor": "#FB4C81",
+          "textColor": "#FB4C81",
+          "content": "一起拼"
+        }
+      ],
+      "mainTitle": "榉木按摩气囊圆齿护发梳",
+      "thirdContent": "3128条好评",
+      "subtitle": "full circle制造商|回弹气囊  全方位按摩头皮 圆齿不伤发"
+    },
+    {
+      "id": 16,
+      "priceStr": 299,
+      "num": 646,
+      "type": 16,
+      "image": "http://bfs.biyao.com/group1/M01/48/9E/rBACYWEBJ7iAIGtCAALRUey8j6s602_360x360.jpg",
+      "labels": [
+        {
+          "color": "#AB7FD1",
+          "roundColor": "#AB7FD1",
+          "textColor": "#FFFFFF",
+          "content": "爆品"
+        },
+        {
+          "color": "#FFFFFF",
+          "roundColor": "#FB4C81",
+          "textColor": "#FB4C81",
+          "content": "一起拼"
+        }
+      ],
+      "mainTitle": "便携迷你电动冲牙器3模式",
+      "thirdContent": "8424条好评",
+      "subtitle": "Areti制造商|3大洁牙模式 水疗式高频脉冲 旋转喷嘴 IPX7级防水 15天长续航"
+    }
+  ],
+  "userinfo": [
+    {
+      "username": "lesson",
+      "userpwd": "123456",
+      "id": 1
+    },
+    {
+      "username": "lesson01",
+      "userpwd": "123456",
+      "id": 2
+    }
+  ],
+  "goodsdetail": [
+    {
+      "id": 1,
+      "goodsid": 1,
+      "colorid": 1,
+      "colorname": "银色",
+      "sizeid": 1,
+      "sizename": "110cm",
+      "num": 100,
+      "price": 99,
+      "img": "https://bfs.biyao.com/group2/M00/FB/BC/CghiFmR4XY6AS33MABdXIcVO2Ok172_100x100.jpg"
+    },
+    {
+      "id": 2,
+      "goodsid": 1,
+      "colorid": 1,
+      "colorname": "银色",
+      "sizeid": 2,
+      "sizename": "120cm",
+      "num": 110,
+      "price": 99,
+      "img": "https://bfs.biyao.com/group2/M00/FB/BC/CghiFmR4XY6AS33MABdXIcVO2Ok172_100x100.jpg"
+    },
+    {
+      "id": 3,
+      "goodsid": 1,
+      "colorid": 2,
+      "colorname": "黑色",
+      "sizeid": 1,
+      "sizename": "110cm",
+      "num": 120,
+      "price": 99,
+      "img": "https://bfs.biyao.com/group1/M01/E2/91/rBACYWGlivmAYvCTABcUl9_iKl8987_100x100.jpg"
+    },
+    {
+      "id": 4,
+      "goodsid": 1,
+      "colorid": 2,
+      "colorname": "黑色",
+      "sizeid": 2,
+      "sizename": "120cm",
+      "num": 140,
+      "price": 99,
+      "img": "https://bfs.biyao.com/group1/M01/E2/91/rBACYWGlivmAYvCTABcUl9_iKl8987_100x100.jpg"
+    },
+    {
+      "id": 5,
+      "goodsid": 2,
+      "colorid": 3,
+      "colorname": "粉色",
+      "sizeid": 3,
+      "sizename": "30ml*3",
+      "num": 700,
+      "price": 139,
+      "img": "https://bfs.biyao.com/group2/M00/11/F7/CghkFmTZg9uAA2CHAAK1bV6cRdc275_800x800.jpg"
+    },
+    {
+      "id": 6,
+      "goodsid": 2,
+      "colorid": 3,
+      "colorname": "粉色",
+      "sizeid": 4,
+      "sizename": "两盒装",
+      "num": 675,
+      "price": 258,
+      "img": "https://bfs.biyao.com/group2/M00/11/F7/CghkFmTZg9uAA2CHAAK1bV6cRdc275_800x800.jpg"
+    },
+    {
+      "id": 7,
+      "goodsid": 2,
+      "colorid": 4,
+      "colorname": "蓝色",
+      "sizeid": 4,
+      "sizename": "两盒装",
+      "num": 365,
+      "price": 258,
+      "img": "https://bfs.biyao.com/group2/M00/11/F7/CghkFmTZg9uAA2CHAAK1bV6cRdc275_800x800.jpg"
+    },
+    {
+      "id": 8,
+      "goodsid": 2,
+      "colorid": 4,
+      "colorname": "蓝色",
+      "sizeid": 3,
+      "sizename": "30ml*3",
+      "num": 365,
+      "price": 139,
+      "img": "https://bfs.biyao.com/group2/M00/11/F7/CghkFmTZg9uAA2CHAAK1bV6cRdc275_800x800.jpg"
+    }
+  ],
+  "shoppingcar": [
+    {
+      "userid": 1,
+      "goodsid": 2,
+      "goodsdetailid": 6,
+      "goodsname": "女士香水套装",
+      "goodsprice": 25800,
+      "img": "https://bfs.biyao.com/group2/M00/12/11/CghjFmTZg9eAQHJuAAK1bV6cRdc946_360x360.jpg",
+      "buynum": 10,
+      "colorname": "粉色",
+      "sizename": "两盒装",
+      "id": 1
+    },
+    {
+      "userid": 1,
+      "goodsid": 2,
+      "goodsdetailid": 8,
+      "goodsname": "女士香水套装",
+      "goodsprice": 13900,
+      "img": "https://bfs.biyao.com/group2/M00/12/11/CghjFmTZg9eAQHJuAAK1bV6cRdc946_360x360.jpg",
+      "buynum": 4,
+      "colorname": "蓝色",
+      "sizename": "30ml*3",
+      "id": 2
+    },
+    {
+      "userid": 1,
+      "goodsid": 2,
+      "goodsdetailid": 5,
+      "goodsname": "女士香水套装",
+      "goodsprice": 13900,
+      "img": "https://bfs.biyao.com/group2/M00/12/11/CghjFmTZg9eAQHJuAAK1bV6cRdc946_360x360.jpg",
+      "buynum": 8,
+      "colorname": "粉色",
+      "sizename": "30ml*3",
+      "id": 3
+    }
+  ],
+  "address": [
+    {
+      "name": "re",
+      "tel": "13145663456",
+      "country": "",
+      "province": "吉林省",
+      "city": "长春市",
+      "county": "南关区",
+      "areaCode": "220102",
+      "postalCode": "234567",
+      "addressDetail": "fdsf",
+      "isDefault": false,
+      "userid": 1,
+      "id": 1
+    },
+    {
+      "name": "ree",
+      "tel": "13145663356",
+      "country": "",
+      "province": "黑龙江省",
+      "city": "哈尔滨市",
+      "county": "道里区",
+      "areaCode": "230102",
+      "postalCode": "234565",
+      "addressDetail": "fdfds ",
+      "isDefault": true,
+      "userid": 1,
+      "id": 2
+    },
+    {
+      "name": "vv",
+      "tel": "13125446345",
+      "country": "",
+      "province": "上海市",
+      "city": "上海市",
+      "county": "黄浦区",
+      "areaCode": "310101",
+      "postalCode": "234543",
+      "addressDetail": "6563f",
+      "isDefault": false,
+      "userid": 1,
+      "id": 3
+    }
+  ]
+}
