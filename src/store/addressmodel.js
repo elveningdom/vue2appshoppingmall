@@ -3,21 +3,20 @@ export const address = {
     namespaced: true,
     state: {
         addresslist: [],
-        chooseId:0,
+        chooseId: 0,
     },
     getters: {
-        defaultChooseId(state){ 
-              let id=1
-            if(state.addresslist.length){
-             
-                let info=state.addresslist.filter(item=>item.isDefault)
-                if(info.length){
-                   id= info[0]["id"]
-                }else{
-                    id=state.addresslist[0]["id"]
+        defaultChooseId(state) {
+            let id = 1
+            if (state.addresslist.length) {
+                let info = state.addresslist.filter(item => item.isDefault)
+                if (info.length) {
+                    id = info[0]["id"]
+                } else {
+                    id = state.addresslist[0]["id"]
                 }
-                if(state.chooseId){
-                    id=state.chooseId
+                if (state.chooseId) {
+                    id = state.chooseId
                 }
                 return id
             }
@@ -27,22 +26,41 @@ export const address = {
         changelist(state, payload) {
             console.log(payload)
             console.log(Array.isArray(payload))
-            let info=Array.isArray(payload)? payload.map(item=>{
-                item.addresstotal=item.province+item.city+item.county+item.addressDetail
+            let info = Array.isArray(payload) ? payload.map(item => {
+                item.addresstotal = item.province + item.city + item.county + item.addressDetail
                 return item
-            }):[payload].map(item=>{
-                item.addresstotal=item.province+item.city+item.county+item.addressDetail
+            }) : [payload].map(item => {
+                item.addresstotal = item.province + item.city + item.county + item.addressDetail
                 return item
             })
-            Array.isArray(payload)?state.addresslist=info:state.addresslist.push(...info)
+            Array.isArray(payload) ? state.addresslist = info : state.addresslist.push(...info)
             console.log(state.addresslist)
         },
-        setChooseId(state, payload){
-            state.chooseId=payload
+        setChooseId(state, payload) {
+            state.chooseId = payload
         },
-        deteleaddress(state){
-            state.addresslist=[],
-            state.chooseId=0
+        deteleaddress(state) {
+            state.addresslist = [],
+                state.chooseId = 0
+        },
+        addresslistupdate(state, payload) {
+            state.addresslist = state.addresslist.map(item => {
+                if (item.id == payload.id) {
+                    item=payload.content
+                    item.addresstotal = payload.content.province + payload.content.city + payload.content.county + payload.content.addressDetail
+                    return item
+                }else{
+                    return item
+                }
+            })
+        },
+        defaultupdate(state,id){
+          state.addresslist=  state.addresslist.map(item=>{
+            if(item.id===id){
+                item.isDefault=false
+            }
+            return item
+          })
         }
     },
     actions: {
@@ -50,8 +68,8 @@ export const address = {
             let res = await addressQuery(payload)
             console.log(res)
             console.log(payload)
-            commit("changelist",res.data)
-            
+            commit("changelist", res.data)
+
         }
     },
 }

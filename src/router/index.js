@@ -44,7 +44,7 @@ const routes = [
     component: () => import('../views/AddressView.vue')
   },
   {
-    path: '/addressedit',
+    path: '/addressedit/:id?',
     name: 'addressedit',
     component: () => import('../views/AddressEditView.vue')
   },

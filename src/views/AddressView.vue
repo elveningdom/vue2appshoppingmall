@@ -5,7 +5,7 @@
             description="您还没有创建收货地址哦">
             <van-button round type="danger" class="bottom-button" @click="gotoaddressedit">新建地址</van-button>
         </van-empty>
-        <van-address-list v-else  v-model="chosenAddressId" :list="list" default-tag-text="默认" @add="onAdd" @edit="onEdit($event)"
+        <van-address-list v-else v-model="chosenAddressId" :list="list" default-tag-text="默认" @add="onAdd" @edit="onEdit"
             add-button-text="+ 添加收货地址" @click-item="clickitem">
             <!-- <template v-slot:tag="scope">
                 <div>
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { mapState ,mapMutations ,mapGetters} from "vuex";
+import { mapState, mapMutations, mapGetters } from "vuex";
 import { changenav } from "../mixins/changenav"
 export default {
     mixins: [changenav],
@@ -47,39 +47,45 @@ export default {
                 }
             })
         },
-        chosenAddressId:{
-            get(){
-               return this.defaultChooseId
+        chosenAddressId: {
+            get() {
+                return this.defaultChooseId
             },
-            set(val){
+            set(val) {
                 this.setChooseId(val)
             }
         },
     },
     data() {
         return {
-            
+            shouldPreventClickItem: false
         };
     },
     methods: {
-        ...mapMutations ("address", ["setChooseId"]),
+        ...mapMutations("address", ["setChooseId"]),
         onAdd() {
             this.$router.push("/addressedit")
         },
-        onEdit(e) {
+        onEdit(item,index) {
             // event.stopPropagation();
-            console.log(e, '11111')
-            this.$router.push("/addressedit")
+            console.log(item,index)
+            this.shouldPreventClickItem = true;
 
-            //   Toast('编辑地址:' + index);
+            this.$router.push("/addressedit/"+item.id)
+
         },
         onClickLeft() {
             this.$router.back(-1)
         },
-        gotoaddressedit(){
+        gotoaddressedit() {
             this.$router.push("/addressedit")
         },
-        clickitem(){
+        clickitem() {
+            if (this.shouldPreventClickItem) {
+                // 阻止执行点击逻辑
+                this.shouldPreventClickItem = false;
+                return;
+            }
             this.$router.push("/pay")
         }
     },

@@ -43,6 +43,7 @@ export default {
         },
     },
     mounted() {
+        console.log(this.checklist)
         console.log(this.shoppingcarlist.filter(item => {
             console.log(item)
           return  item.checked

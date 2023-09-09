@@ -27,7 +27,7 @@ import { changenav } from "../mixins/changenav"
 import { userinfo } from "../mixins/userinfo.js"
 import { goodsDetailQuery, addShoppingCar, shoppingcarQuery, shoppingCarUpdate } from "../model/shoppingcarmodel"
 // import { mapState } from "vuex"
-import { mapGetters } from "vuex"
+import { mapGetters ,mapMutations} from "vuex"
 export default {
     mixins: [changenav, userinfo],
     data() {
@@ -66,6 +66,7 @@ export default {
     },
     methods: {
         // ...mapState("shoppingcar",["shoppingcarlist"]),
+        ...mapMutations("shoppingcar",['changelist']),
         gotoshoppingcar(){
             this.$router.push("/shoppingcar")
         },
@@ -143,9 +144,11 @@ export default {
             if (res.data.length) {
                 await shoppingCarUpdate(res.data[0]["id"], { buynum: options.selectedNum + res.data[0]["buynum"] })
             } else {
-                await addShoppingCar({
+              let res=  await addShoppingCar({
                     userid, goodsid, goodsdetailid, goodsname, goodsprice, img, buynum, colorname, sizename
                 })
+                console.log(res.data)
+                this.changelist(res.data)
             }
             this.$dialog.confirm({
                 title: '加入成功',

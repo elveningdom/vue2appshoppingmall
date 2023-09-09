@@ -17,10 +17,18 @@ export const shoppingcar = {
     },
     mutations: {
         changelist(state, payload) {
-            state.shoppingcarlist = payload.map(item=>{
+            let info = Array.isArray(payload) ? payload.map(item => {
+                    item.checked=false
+                    return item
+            }):[payload].map(item => {
                 item.checked=false
                 return item
             })
+            Array.isArray(payload) ?state.shoppingcarlist=info:state.shoppingcarlist.push(...info)
+            // state.shoppingcarlist = payload.map(item=>{
+            //     item.checked=false
+            //     return item
+            // })
             console.log(payload)
         },
         deleteshoppingcarlist(state){
