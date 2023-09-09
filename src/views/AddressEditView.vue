@@ -8,10 +8,11 @@
 
 <script>
 import { areaList } from '@vant/area-data';
+import { mapMutations } from 'vuex';
 import { changenav } from "../mixins/changenav"
 import { userinfo } from "../mixins/userinfo"
 import { addaddress, addressQuery,addressUpdate } from "../model/addressmodel"
-export default {
+export default { 
     mixins: [changenav, userinfo],
     data() {
         return {
@@ -20,6 +21,8 @@ export default {
         };
     },
     methods: {
+        ...mapMutations("address",["setChooseId"]),
+        ...mapMutations("address",["changelist"]),
         async onSave(content) {
             console.log({ ...content, userid: this.userid })
             if (content.isDefault) {
@@ -37,10 +40,13 @@ export default {
                     console.log(res2)
                 }
             }
-            await addaddress({
+          let res2=  await addaddress({
                 ...content,
                 userid: this.userid
             })
+            this.setChooseId(res2.data.id)
+            this.changelist(res2.data)
+            this.$router.push("/address")
           
         },
         onDelete() {

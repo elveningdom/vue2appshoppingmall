@@ -1,7 +1,7 @@
 <template>
     <div>
         <van-sticky>
-            <van-search v-model="value" shape="round" placeholder="请输入搜索关键词" />
+            <van-search shape="round" placeholder="请输入搜索关键词" />
             <van-tabs v-model="active" title-active-color="#7f4395" color="#7f4395">
                 <van-tab title="热门">
                     <SwiperView></SwiperView>
@@ -26,7 +26,7 @@
         </div>
         <GridView></GridView>
         <div class="blockline" style="width: 100%; height: 10px; background: rgb(244, 244, 244);"></div>
-        <ListView></ListView>
+        <ListView ></ListView>
     </div>
 </template>
 
@@ -37,7 +37,6 @@ import ListView from "@/components/home/ListView.vue";
 export default {
     data() {
         return {
-            value: '',
             active: 0,
         };
     },
@@ -45,7 +44,7 @@ export default {
         SwiperView,
         GridView,
         ListView
-    }
+    },
 }
 </script>
 

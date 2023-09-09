@@ -3,6 +3,8 @@ export const shoppingcar = {
     namespaced: true,
     state: {
         shoppingcarlist: [],
+        checklist:[],
+
     },
     getters: {
         totalNum(state){
@@ -24,6 +26,9 @@ export const shoppingcar = {
         deleteshoppingcarlist(state){
             console.log("1111",state)
            state.shoppingcarlist=[]
+        },
+        setChecklist(state,payload){
+            state.checklist=payload
         }
     },
     actions: {

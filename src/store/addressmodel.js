@@ -25,10 +25,16 @@ export const address = {
     },
     mutations: {
         changelist(state, payload) {
-            state.addresslist = payload.map(item=>{
+            console.log(payload)
+            console.log(Array.isArray(payload))
+            let info=Array.isArray(payload)? payload.map(item=>{
+                item.addresstotal=item.province+item.city+item.county+item.addressDetail
+                return item
+            }):[payload].map(item=>{
                 item.addresstotal=item.province+item.city+item.county+item.addressDetail
                 return item
             })
+            Array.isArray(payload)?state.addresslist=info:state.addresslist.push(...info)
             console.log(state.addresslist)
         },
         setChooseId(state, payload){

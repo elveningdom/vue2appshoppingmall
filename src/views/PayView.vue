@@ -16,8 +16,13 @@
             <van-icon name="arrow" />
         </div>
 
-        <van-card v-for="i in shoppingcarlist.filter(item => item.checked)" :key="i.id" :num="i.buynum"
-            :price="i.goodsprice / 100" :desc="i.colorname + ',' + i.sizename" :title="i.goodsname" :thumb="i.img" />
+        <van-card v-for="i in checklist" 
+            :key="i.id" 
+            :num="i.buynum"
+            :price="i.goodsprice / 100" 
+            :desc="i.colorname + ',' + i.sizename" 
+            :title="i.goodsname" 
+            :thumb="i.img" />
     </div>
 </template>
 
@@ -28,19 +33,24 @@ export default {
     mixins: [changenav],
     computed: {
         ...mapState("shoppingcar", ["shoppingcarlist"]),
+        ...mapState("shoppingcar", ["checklist"]),
         ...mapState("address", ["addresslist"]),
         ...mapGetters("address", ["defaultChooseId"]),
         addressitem() {
             console.log(this.defaultChooseId)
             console.log(this.addresslist.filter(item => item.id == this.defaultChooseId))
             return this.addresslist.filter(item => item.id == this.defaultChooseId)[0]
-        }
+        },
     },
     mounted() {
-        console.log(this.addresslist)
+        console.log(this.shoppingcarlist.filter(item => {
+            console.log(item)
+          return  item.checked
+        }),"1111")
         console.log(this.shoppingcarlist)
        let dom= document.querySelector(".van-cell__value")
       if(dom!==null) dom.innerHTML = "添加收货地址"
+
     },
     methods: {
         onAdd() {

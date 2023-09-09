@@ -8,6 +8,7 @@
             <template #right>
                 <van-button square text="删除" type="danger" class="delete-button" />
             </template>
+            
         </van-swipe-cell>
         <van-submit-bar :price="totalprice" :button-text="buynumAll" @submit="onSubmit" button-color="rgb(114, 50, 221)">
             <van-checkbox v-model="checkedAll">全选</van-checkbox>
@@ -17,7 +18,7 @@
 
 <script>
 import { changenav } from "../mixins/changenav"
-import { mapState } from "vuex"
+import { mapState ,mapMutations} from "vuex"
 export default {
     mixins: [changenav],
     data() {
@@ -47,12 +48,14 @@ export default {
         }
     },
     methods: {
+        ...mapMutations("shoppingcar",["setChecklist"]),
         onClickLeft() {
             this.$router.back(-1)
         },
         onSubmit() { 
             let info=this.shoppingcarlist.filter(i=>i.checked)
             if(info.length){
+                this.setChecklist(info)
                 this.$router.push("/pay")
             }else{
                 this.$toast.fail("请至少添加一条")

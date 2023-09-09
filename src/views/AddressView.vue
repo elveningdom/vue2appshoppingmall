@@ -5,8 +5,8 @@
             description="您还没有创建收货地址哦">
             <van-button round type="danger" class="bottom-button" @click="gotoaddressedit">新建地址</van-button>
         </van-empty>
-        <van-address-list v-else v-model="chosenAddressId" :list="list" default-tag-text="默认" @add="onAdd" @edit="onEdit"
-            add-button-text="+ 添加收货地址">
+        <van-address-list v-else  v-model="chosenAddressId" :list="list" default-tag-text="默认" @add="onAdd" @edit="onEdit($event)"
+            add-button-text="+ 添加收货地址" @click-item="clickitem">
             <!-- <template v-slot:tag="scope">
                 <div>
                     <span>{{ scope.name }}</span>
@@ -27,7 +27,6 @@ export default {
     computed: {
         ...mapState("address", ["addresslist"]),
         ...mapGetters("address", ["defaultChooseId"]),
-
         list() {
             console.log(this.addresslist.map(item => {
                 return {
@@ -67,8 +66,11 @@ export default {
         onAdd() {
             this.$router.push("/addressedit")
         },
-        onEdit(item, index) {
-            console.log(item, index)
+        onEdit(e) {
+            // event.stopPropagation();
+            console.log(e, '11111')
+            this.$router.push("/addressedit")
+
             //   Toast('编辑地址:' + index);
         },
         onClickLeft() {
@@ -76,6 +78,9 @@ export default {
         },
         gotoaddressedit(){
             this.$router.push("/addressedit")
+        },
+        clickitem(){
+            this.$router.push("/pay")
         }
     },
 }
@@ -119,7 +124,7 @@ export default {
 }
 
 .van-button__text {
-    color: #fff;
+    color: #dc87ed;
 }
 
 .van-button--round {
