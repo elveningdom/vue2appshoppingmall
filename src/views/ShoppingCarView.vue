@@ -31,7 +31,7 @@ export default {
         ...mapState("shoppingcar",["shoppingcarlist"]),
         checkedAll:{
             get(){
-                return this.shoppingcarlist.every(item=>item.checked)
+                return this.shoppingcarlist.length?this.shoppingcarlist.every(item=>item.checked):false
             },
             set(val){
                 this.shoppingcarlist.forEach(item => (item.checked = val));

@@ -14,11 +14,12 @@
 
 <script>
 import { userinfo } from "../mixins/userinfo"
+import {changenav} from "../mixins/changenav"
 import LoginView from "../components/user/LoginView.vue"
 import RegisterVire from "../components/user/RegisterView.vue"
 import User from "../components/user/UserInfo.vue"
 export default {
-    mixins: [userinfo],
+    mixins: [userinfo,changenav],
     components: {
         LoginView,
         RegisterVire,

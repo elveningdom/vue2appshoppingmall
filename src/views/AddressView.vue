@@ -3,19 +3,22 @@
         <van-nav-bar title="收货地址" left-arrow @click-left="onClickLeft" />
         <van-empty v-if="!list.length" class="custom-image" image="https://img01.yzcdn.cn/vant/custom-empty-image.png"
             description="您还没有创建收货地址哦">
-            <van-button round type="danger" class="bottom-button">新建地址</van-button>
+            <van-button round type="danger" class="bottom-button" @click="gotoaddressedit">新建地址</van-button>
         </van-empty>
-        <van-address-list v-else v-model="chosenAddressId" :list="list" @add="onAdd" @edit="onEdit"
+        <van-address-list v-else v-model="chosenAddressId" :list="list" default-tag-text="默认" @add="onAdd" @edit="onEdit"
             add-button-text="+ 添加收货地址">
-            <template v-slot:tag="{ item }">
-                <span>{{ item?.name }}</span>
-            </template>
+            <!-- <template v-slot:tag="scope">
+                <div>
+                    <span>{{ scope.name }}</span>
+                    <span>{{ scope.tel }}</span>
+                </div>
+            </template> -->
         </van-address-list>
     </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState ,mapMutations ,mapGetters} from "vuex";
 import { changenav } from "../mixins/changenav"
 export default {
     mixins: [changenav],
@@ -23,6 +26,8 @@ export default {
     },
     computed: {
         ...mapState("address", ["addresslist"]),
+        ...mapGetters("address", ["defaultChooseId"]),
+
         list() {
             console.log(this.addresslist.map(item => {
                 return {
@@ -42,14 +47,23 @@ export default {
                     isDefault: item.isDefault
                 }
             })
-        }
+        },
+        chosenAddressId:{
+            get(){
+               return this.defaultChooseId
+            },
+            set(val){
+                this.setChooseId(val)
+            }
+        },
     },
     data() {
         return {
-            chosenAddressId: '1',
+            
         };
     },
     methods: {
+        ...mapMutations ("address", ["setChooseId"]),
         onAdd() {
             this.$router.push("/addressedit")
         },
@@ -59,6 +73,9 @@ export default {
         },
         onClickLeft() {
             this.$router.back(-1)
+        },
+        gotoaddressedit(){
+            this.$router.push("/addressedit")
         }
     },
 }
@@ -66,7 +83,7 @@ export default {
 
 <style lang="scss" scoped>
 ::v-deep .van-icon-success {
-    display: none;
+    // display: none;
 }
 
 .van-address-item__address {
@@ -96,14 +113,32 @@ export default {
 }
 
 .bottom-button {
-    background-color: #784CFA;
-    border: 0.02667rem solid #784CFA;
+    background-color: #dc87ed;
+    border: 0.02667rem solid #dc87ed;
+    color: #fff;
 }
 
 .van-button__text {
-    color: #b657df;
+    color: #fff;
 }
 
 .van-button--round {
     border-radius: 0;
-}</style>
+}
+
+.van-nav-bar__content {
+    position: relative
+}
+
+::v-deep .van-nav-bar__content::before {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 0.05333rem;
+    background: -webkit-repeating-linear-gradient(135deg, #ff6c6c 0, #ff6c6c 20%, transparent 0, transparent 25%, #1989fa 0, #1989fa 45%, transparent 0, transparent 50%);
+    background: repeating-linear-gradient(-45deg, #ff6c6c 0, #ff6c6c 20%, transparent 0, transparent 25%, #1989fa 0, #1989fa 45%, transparent 0, transparent 50%);
+    background-size: 2.13333rem;
+    content: '';
+}
+</style>

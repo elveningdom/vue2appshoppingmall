@@ -30,6 +30,7 @@ data(){
   }
 },
 created(){
+  console.log(this.userid)
   this.shoppingcarAllQuery({userid:this.userid})
   this.addressAllQuery({userid:this.userid})
 },

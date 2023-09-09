@@ -1,7 +1,5 @@
 import { addressQuery } from "../model/addressmodel"
-// import {userinfo} from "../mixins/userinfo"
 export const address = {
-    // mixins:[userinfo],
     namespaced: true,
     state: {
         addresslist: [],
@@ -31,10 +29,15 @@ export const address = {
                 item.addresstotal=item.province+item.city+item.county+item.addressDetail
                 return item
             })
+            console.log(state.addresslist)
         },
         setChooseId(state, payload){
             state.chooseId=payload
         },
+        deteleaddress(state){
+            state.addresslist=[],
+            state.chooseId=0
+        }
     },
     actions: {
         async addressAllQuery({ commit }, payload) {
