@@ -17,10 +17,9 @@ import { mapMutations,mapState } from 'vuex';
                 window.localStorage.removeItem("userinfo"),
                 window.localStorage.removeItem("backUrl")
                 this.$emit("changeShow",false)
-                // window.sessionStorage.removeItem("vuex")
                 this.deleteshoppingcarlist()
                 this.deteleaddress()
-                console.log(this.shoppingcarlist)
+                // window.sessionStorage.removeItem("vuex")
             }
         }
     }

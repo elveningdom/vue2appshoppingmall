@@ -37,18 +37,10 @@ export default {
         ...mapState("address", ["addresslist"]),
         ...mapGetters("address", ["defaultChooseId"]),
         addressitem() {
-            console.log(this.defaultChooseId)
-            console.log(this.addresslist.filter(item => item.id == this.defaultChooseId))
             return this.addresslist.filter(item => item.id == this.defaultChooseId)[0]
         },
     },
     mounted() {
-        console.log(this.checklist)
-        console.log(this.shoppingcarlist.filter(item => {
-            console.log(item)
-          return  item.checked
-        }),"1111")
-        console.log(this.shoppingcarlist)
        let dom= document.querySelector(".van-cell__value")
       if(dom!==null) dom.innerHTML = "添加收货地址"
 

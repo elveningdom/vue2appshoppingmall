@@ -31,3 +31,10 @@ export const shoppingCarUpdate=(id,data)=>{
         data
     })
 }
+
+export const shoppingcardelete=(id)=>{
+    return axios({
+        method:"delete",
+        url:"/shoppingcar/"+id,
+    })
+}

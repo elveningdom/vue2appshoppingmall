@@ -28,15 +28,6 @@ export default {
         ...mapState("address", ["addresslist"]),
         ...mapGetters("address", ["defaultChooseId"]),
         list() {
-            console.log(this.addresslist.map(item => {
-                return {
-                    id: item.id,
-                    name: item.name,
-                    tel: item.tel,
-                    address: item.addresstotal,
-                    isDefault: item.isDefault
-                }
-            }))
             return this.addresslist.map(item => {
                 return {
                     id: item.id,
@@ -66,9 +57,7 @@ export default {
         onAdd() {
             this.$router.push("/addressedit")
         },
-        onEdit(item,index) {
-            // event.stopPropagation();
-            console.log(item,index)
+        onEdit(item) {
             this.shouldPreventClickItem = true;
 
             this.$router.push("/addressedit/"+item.id)

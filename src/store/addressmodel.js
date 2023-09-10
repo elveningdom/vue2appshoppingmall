@@ -24,8 +24,6 @@ export const address = {
     },
     mutations: {
         changelist(state, payload) {
-            console.log(payload)
-            console.log(Array.isArray(payload))
             let info = Array.isArray(payload) ? payload.map(item => {
                 item.addresstotal = item.province + item.city + item.county + item.addressDetail
                 return item
@@ -34,7 +32,6 @@ export const address = {
                 return item
             })
             Array.isArray(payload) ? state.addresslist = info : state.addresslist.push(...info)
-            console.log(state.addresslist)
         },
         setChooseId(state, payload) {
             state.chooseId = payload
@@ -46,28 +43,29 @@ export const address = {
         addresslistupdate(state, payload) {
             state.addresslist = state.addresslist.map(item => {
                 if (item.id == payload.id) {
-                    item=payload.content
+                    item = payload.content
                     item.addresstotal = payload.content.province + payload.content.city + payload.content.county + payload.content.addressDetail
                     return item
-                }else{
+                } else {
                     return item
                 }
             })
         },
-        defaultupdate(state,id){
-          state.addresslist=  state.addresslist.map(item=>{
-            if(item.id===id){
-                item.isDefault=false
-            }
-            return item
-          })
-        }
+        defaultupdate(state, id) {
+            state.addresslist = state.addresslist.map(item => {
+                if (item.id === id) {
+                    item.isDefault = false
+                }
+                return item
+            })
+        },
+        addressdelete(state, id) {
+            state.addresslist = state.addresslist.filter(item => item.id != id)
+        },
     },
     actions: {
         async addressAllQuery({ commit }, payload) {
             let res = await addressQuery(payload)
-            console.log(res)
-            console.log(payload)
             commit("changelist", res.data)
 
         }

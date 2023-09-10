@@ -66,7 +66,7 @@ export default {
     },
     methods: {
         // ...mapState("shoppingcar",["shoppingcarlist"]),
-        ...mapMutations("shoppingcar",['changelist']),
+        ...mapMutations("shoppingcar",['changelist','setlistbuynum']),
         gotoshoppingcar(){
             this.$router.push("/shoppingcar")
         },
@@ -94,7 +94,6 @@ export default {
                 })
                 this.coloritem = coloritem
                 this.sku.tree = []
-                console.log(this.sku.tree)
                 this.sku.tree.push({
                     k: '颜色', // skuKeyName：规格类目名称
                     k_s: 's1', // skuKeyStr：sku 组合列表（下方 list）中当前类目对应的 key 值，value 值会是从属于当前类目的一个规格值 id
@@ -129,7 +128,6 @@ export default {
         },
         onBuyClicked() { },
         async onAddCartClicked(options) {
-            console.log(options)
             //userid,goodsid,goodsdetailid,goodsname,goodsprice,img,buynum,colorname,sizename,
             let userid = this.userid
             let goodsid = this.list.id
@@ -143,11 +141,11 @@ export default {
             let res = await shoppingcarQuery({ goodsdetailid })
             if (res.data.length) {
                 await shoppingCarUpdate(res.data[0]["id"], { buynum: options.selectedNum + res.data[0]["buynum"] })
+                this.setlistbuynum({id:res.data[0]["id"],num:options.selectedNum})
             } else {
               let res=  await addShoppingCar({
                     userid, goodsid, goodsdetailid, goodsname, goodsprice, img, buynum, colorname, sizename
                 })
-                console.log(res.data)
                 this.changelist(res.data)
             }
             this.$dialog.confirm({

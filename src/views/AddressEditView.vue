@@ -11,7 +11,7 @@ import { areaList } from '@vant/area-data';
 import { mapMutations, mapState } from 'vuex';
 import { changenav } from "../mixins/changenav"
 import { userinfo } from "../mixins/userinfo"
-import { addaddress, addressQuery, addressUpdate } from "../model/addressmodel"
+import { addaddress, addressQuery, addressUpdate ,addressdelete} from "../model/addressmodel"
 // import { addressUpdate } from "../model/addressmodel"
 export default {
     mixins: [changenav, userinfo],
@@ -40,7 +40,7 @@ export default {
     methods: {
         ...mapMutations("address", ["setChooseId"]),
         ...mapMutations("address", ["changelist"]),
-        ...mapMutations("address", ["addresslistupdate", 'defaultupdate']),
+        ...mapMutations("address", ["addresslistupdate", 'defaultupdate','addressdelete']),
 
         async repeatquery(content) {//重复查询
             if (content.isDefault) {
@@ -58,12 +58,10 @@ export default {
             }
         },
         async onSave(content) {
-            console.log({ ...content, userid: this.userid })
             if (this.$route.params.id !== void 0) {
                 this.repeatquery(content)
                 let res2 = await addressUpdate(this.$route.params.id, content)
                 this.addresslistupdate({ id: this.$route.params.id, content })
-                console.log(res2.data)
                 this.setChooseId(res2.data.id)
             } else {
                 this.repeatquery(content)
@@ -76,11 +74,35 @@ export default {
             }
             this.$router.push("/address")
         },
-        onDelete() {
+       async onDelete(content) {
+        await addressdelete(content.id)
+        this.addressdelete(content.id)
+        this.$router.push("/address")
+        
         },
 
     },
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+/* 使用 ::v-deep 选择器来穿透组件边界 */
+::v-deep .van-switch--on  {
+  background-color: #eda2ec;
+}
+
+/* 使用 ::v-deep 选择器来穿透组件边界 */
+::v-deep .van-button--danger  {
+  color: #eb7be9;
+  background-color: #fff;
+  border: 0.02667rem solid #eb7be9;
+}
+::v-deep .van-button--round{
+     border-radius: 0;
+}
+::v-deep .van-button--default {
+  border: 0.02667rem solid #eb7be9;
+  color:#eb7be9;
+}
+</style>

@@ -22,3 +22,10 @@ export const addressQuery=(params)=>{
         params
     })
     }
+
+export const addressdelete=(id)=>{
+    return axios({
+        method:"delete",
+        url:"/address/"+id,
+    })
+}

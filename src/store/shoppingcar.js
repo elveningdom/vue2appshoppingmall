@@ -29,22 +29,32 @@ export const shoppingcar = {
             //     item.checked=false
             //     return item
             // })
-            console.log(payload)
+        },
+        setlistbuynum(state,{id,num}){
+            console.log(id,num)
+            state.shoppingcarlist=state.shoppingcarlist.map(item=>{
+                if(item.id==id){
+                    item.buynum+=num
+                }
+                return item
+            })
         },
         deleteshoppingcarlist(state){
-            console.log("1111",state)
            state.shoppingcarlist=[]
+           state.checklist=[]
         },
         setChecklist(state,payload){
             state.checklist=payload
+        },
+        shoppingcardeleteone(state,id){
+            state.shoppingcarlist=state.shoppingcarlist.filter(item=>item.id!==id)
         }
     },
     actions: {
         async shoppingcarAllQuery({ commit }, payload) {
             let res = await shoppingcarQuery(payload)
-            console.log(res)
-            console.log(payload)
             commit("changelist",res.data)
+            console.log(res)
             
         }
     },
