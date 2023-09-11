@@ -17,8 +17,11 @@
 </template>
 
 <script>
-import {  userQuery } from "../../model/usermodel.js"
+import { userQuery } from "../../model/usermodel.js"
+import {userinfo} from "../../mixins/userinfo"
+import { mapActions } from "vuex";
 export default {
+    mixins:[userinfo],
     data() {
         return {
             username: '',
@@ -26,18 +29,23 @@ export default {
         };
     },
     methods: {
+        ...mapActions("shoppingcar",["shoppingcarAllQuery"]),
+        ...mapActions("address",["addressAllQuery"]),
         async onSubmit(values) {
             let res = await userQuery({
                 username: values.username,
                 userpwd: values.password
             })
-            if(res.data.length){
-                let info=res.data[0]
-                window.localStorage.setItem("userinfo",JSON.stringify(info))
-                let backUrl=localStorage.getItem("backUrl")
-                if(backUrl){
+            if (res.data.length) {
+                let info = res.data[0]
+                window.localStorage.setItem("userinfo", JSON.stringify(info))
+                let backUrl = localStorage.getItem("backUrl")
+                console.log(this.userid)
+                this.shoppingcarAllQuery({ userid: res.data[0]['id'] })
+                 this.addressAllQuery({ userid: res.data[0]['id'] })
+                if (backUrl) {
                     this.$router.push(backUrl)
-                }else{
+                } else {
                     this.$router.push("/")
                 }
             }

@@ -30,8 +30,11 @@ data(){
   }
 },
 created(){
-  this.shoppingcarAllQuery({userid:this.userid})
-  this.addressAllQuery({userid:this.userid})
+  this.userid&& this.shoppingcarAllQuery({userid:this.userid})
+  this.userid&&this.addressAllQuery({userid:this.userid})
+},
+mounted(){
+  console.log('111')
 },
 methods:{
   ...mapActions("shoppingcar",["shoppingcarAllQuery"]),

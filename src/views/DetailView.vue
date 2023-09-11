@@ -138,7 +138,7 @@ export default {
             let buynum = options.selectedNum
             let colorname = this.coloritem.filter(item => item.id == options.selectedSkuComb.s1)[0].name
             let sizename = this.sizeitem.filter(item => item.id == options.selectedSkuComb.s2)[0].name
-            let res = await shoppingcarQuery({ goodsdetailid })
+            let res = await shoppingcarQuery({ goodsdetailid,userid:this.userid })
             if (res.data.length) {
                 await shoppingCarUpdate(res.data[0]["id"], { buynum: options.selectedNum + res.data[0]["buynum"] })
                 this.setlistbuynum({id:res.data[0]["id"],num:options.selectedNum})

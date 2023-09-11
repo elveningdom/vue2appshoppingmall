@@ -59,9 +59,7 @@ export default {
         },
         onEdit(item) {
             this.shouldPreventClickItem = true;
-
             this.$router.push("/addressedit/"+item.id)
-
         },
         onClickLeft() {
             this.$router.back(-1)

@@ -1,5 +1,6 @@
 <template>
     <div>
+        <van-nav-bar title="支付" left-text="返回" left-arrow @click-left="onClickLeft" />
         <van-contact-card type="add" icon="location-o" @click="onAdd" v-if="!addresslist.length" />
         <div class="total" v-else @click="gotoaddress">
             <div>
@@ -16,13 +17,8 @@
             <van-icon name="arrow" />
         </div>
 
-        <van-card v-for="i in checklist" 
-            :key="i.id" 
-            :num="i.buynum"
-            :price="i.goodsprice / 100" 
-            :desc="i.colorname + ',' + i.sizename" 
-            :title="i.goodsname" 
-            :thumb="i.img" />
+        <van-card v-for="i in checklist" :key="i.id" :num="i.buynum" :price="i.goodsprice / 100"
+            :desc="i.colorname + ',' + i.sizename" :title="i.goodsname" :thumb="i.img" />
     </div>
 </template>
 
@@ -31,6 +27,22 @@ import { changenav } from "../mixins/changenav"
 import { mapState, mapGetters } from "vuex";
 export default {
     mixins: [changenav],
+    beforeRouteEnter(to, from, next) {
+        console.log("111",from)
+        next(vm => {
+            if (from.name == "shoppingcar" || from.name == "address" || from.name === null) {
+                vm.isConfirm = true;
+            } else {
+                vm.$router.push("/")
+            }
+        })
+    },
+    mounted(){
+        let dom=document.querySelector(".van-cell__value")
+        if(dom){
+            dom.innerHTML='添加地址'
+        }
+    },
     computed: {
         ...mapState("shoppingcar", ["shoppingcarlist"]),
         ...mapState("shoppingcar", ["checklist"]),
@@ -40,20 +52,29 @@ export default {
             return this.addresslist.filter(item => item.id == this.defaultChooseId)[0]
         },
     },
-    mounted() {
-       let dom= document.querySelector(".van-cell__value")
-      if(dom!==null) dom.innerHTML = "添加收货地址"
 
+    beforeDestroy() {
+        window.removeEventListener('beforeunload', this.handleBeforeUnload);
     },
     methods: {
-        onAdd() {
-            this.$router.push("/addressedit")
+        handleBeforeUnload(event) {
+            console.log("222")
+            if (this.$route.name === "shoppingcar" || this.$route.name === "address" || this.$route.name === "") {
+                // 执行路由刷新时的逻辑
+                event.returnValue = "您有未保存的更改，确定要离开吗？";
+            }
         },
-        gotoaddress(){
-            this.$router.push("/address")
+            onAdd() {
+                this.$router.push("/addressedit")
+            },
+            gotoaddress() {
+                this.$router.push("/address")
+            },
+            onClickLeft() {
+                this.$router.back(-1)
+            },
         }
     }
-}
 </script>
 
 <style lang="scss" scoped>
@@ -81,10 +102,12 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .van-icon-arrow{
+
+    .van-icon-arrow {
         font-size: .34rem;
         color: #999;
     }
+
     div {
         margin-bottom: 5px;
     }
@@ -131,4 +154,5 @@ export default {
     color: #999;
     font-size: .24rem;
     line-height: .36rem;
-}</style>
+}
+</style>

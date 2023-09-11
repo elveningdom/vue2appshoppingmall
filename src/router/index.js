@@ -52,29 +52,23 @@ const routes = [
 ]
 
 const router = new VueRouter({
+  mode:'hash',
   routes
 })
 
-// router.beforeEach((to, from, next) => {
-
-//   if (to.meta && to.meta.isLogin) {
-//     let userinfo = window.localStorage.getItem("userinfo")
-//     if (userinfo) {
-//       if(to.path=="/pay"&&from.path=="/shoppingcar"){
-//         next()
-//       }else{
-//         next("/")
-//       }
-//       next()
-//     }
-//     else {
-//       console.log(to)
-//       window.localStorage.setItem("backUrl", to.path)
-//       next("/mine")
-//     }
-//   }
-//   next()
-// }
-// )
+router.beforeEach((to, from, next) => {
+  if (to.meta && to.meta.isLogin) {
+    let userinfo = window.localStorage.getItem("userinfo")
+    if (userinfo) {
+      next()
+      return
+    }
+    window.localStorage.setItem("backUrl", to.path)
+    next("/mine")
+    return
+  }
+  next()
+}
+)
 
 export default router
